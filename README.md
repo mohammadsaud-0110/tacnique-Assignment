@@ -41,7 +41,7 @@ Explore the powerful API endpoints available in this project:
 
 | No. | API Endpoint          | Feature             | Description                                | req.body                                   |
 |---- |----------------------|---------------------|--------------------------------------------|-------------------------------------------|
-| 1   | POST /user/register   | User Registration   | Create a new user account.                  | `{ "name": "example", "email": "example@email.com", "password": "example123" }` |
+| 1   | POST /user/register   | User Registration   | Create a new user account.                  | `{ "name": "example",\n "email": "example@email.com", "password": "example123" }` |
 | 2   | POST /user/login      | User Login          | Log in with your credentials.               | `{ "email": "example@email.com", "password": "example123" }` |
 | 3   | GET /user/allusers    | All Users           | Retrieve all registered users.             | -                                         |
 | 4   | POST /user/logout     | User Logout         | Safely log out from your account.           | -                                         |
