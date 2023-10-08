@@ -1,6 +1,6 @@
 const express = require("express");
 const { validateRegistration } = require("../middlewares/registration.middleware");
-const { UserRegistration, UserLogin, AllUsers } = require("../controller/user.controller");
+const { UserRegistration, UserLogin, AllUsers, LogOut } = require("../controller/user.controller");
 
 const userRouter = express.Router()
 userRouter.use(express.json());
@@ -15,6 +15,8 @@ userRouter.post("/login", UserLogin);
 // to check all registration
 userRouter.get("/allusers", AllUsers);
 
+// to logout
+userRouter.post("/logout", LogOut);
 
 // Error-handling middleware for non-existent routes
 userRouter.use((req, res, next) => {

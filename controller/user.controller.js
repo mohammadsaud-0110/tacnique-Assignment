@@ -1,4 +1,4 @@
-const { UserModel } = require("../models/user.model")
+const { UserModel, BlackList } = require("../models/user.model")
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
@@ -74,10 +74,40 @@ const AllUsers = async (req, res) => {
     }
 }
 
+const LogOut = async (req, res) => {
+    try {
+        // Extract the token from the request headers
+        const token = req.headers.authorization;
+
+        if (!token) {
+            return res.status(400).send({ "message": "Token Not Found", success: false });
+        }
+
+        const isPresent = await BlackList.exists({ token });
+
+        if (!isPresent) {
+            // Add Token To blacklist Model for Security
+            const blacklistToken = new BlackList({ token });
+
+            // Save The Token
+            await blacklistToken.save();
+
+            // Return Success Response
+            return res.status(200).send({ "message": "Logout Succesfully", success: true });
+        } else {
+            return res.status(200).send({ "message": "Already Logged Out", success: false });
+        }
+    }
+    catch (error) {
+        res.status(500).send({ "message": "Something went wrong!", "error": error.message, success: false });
+    }
+}
+
 
 
 module.exports = {
     UserRegistration,
     UserLogin,
-    AllUsers
+    AllUsers,
+    LogOut
 }

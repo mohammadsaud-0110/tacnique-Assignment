@@ -8,6 +8,13 @@ const userSchema = mongoose.Schema({
 
 const UserModel = new mongoose.model("user", userSchema);
 
+const blackListSchema = mongoose.Schema({
+    token: { type: String, required: true },
+}, { versionKey: false });
+
+const BlackList = new mongoose.model("blacklist", blackListSchema);
+
 module.exports = {
-    UserModel
+    UserModel,
+    BlackList
 }
