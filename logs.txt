@@ -16,3 +16,11 @@
 [32minfo[39m GET /task/tasks/user/6522764453d05df151d7d5fa 200, Browser: undefined, Windows Info: 10.0.22621
 [32minfo[39m PUT /task/tasks/6522768253d05df151d7d5fd 200, Browser: undefined, Windows Info: 10.0.22621
 [32minfo[39m GET /task/tasks 200, Browser: undefined, Windows Info: 10.0.22621
+[32minfo[39m POST /user/login 200, Browser: undefined, Windows Info: 10.0.22621
+[32minfo[39m GET /task/tasks 200, Browser: undefined, Windows Info: 10.0.22621
+[33mwarn[39m GET /task/tasks 429, Browser: undefined, Windows Info: 10.0.22621
+[32minfo[39m GET /user/allusers 200, Browser: undefined, Windows Info: 10.0.22621
+[33mwarn[39m GET /user/alluser 401, Browser: undefined, Windows Info: 10.0.22621
+[33mwarn[39m GET /users 401, Browser: undefined, Windows Info: 10.0.22621
+[33mwarn[39m GET /users 401, Browser: undefined, Windows Info: 10.0.22621
+[33mwarn[39m GET /user/ajd 404, Browser: undefined, Windows Info: 10.0.22621

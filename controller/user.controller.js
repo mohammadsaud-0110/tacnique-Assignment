@@ -13,6 +13,7 @@ const UserRegistration = async (req, res) => {
             res.status(409).send({ "message": "Email already present!" })
         }
         else {
+            // hashing password before saving
             bcrypt.hash(password, 6, async (err, hash) => {
                 if (err) {
                     res.status(500).send({ "message": "Something went wrong", "Error": err.message })
@@ -37,8 +38,10 @@ const UserLogin = async (req, res) => {
     try {
         const user = await UserModel.findOne({ email })
         if (user) {
+            // Compare the provided password with the hashed password
             bcrypt.compare(password, user.password, (err, result) => {
                 if (result) {
+                    // generating and sending access token upon successful login
                     let token = jwt.sign({ userId: user._id }, process.env.accessToken);
                     res.status(200).send({ "message": "Login Successfully", "access Token": token, userId: user._id })
                 }

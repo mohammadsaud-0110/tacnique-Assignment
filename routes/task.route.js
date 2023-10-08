@@ -26,6 +26,22 @@ taskRouter.put("/tasks/:id", updateTaskById);
 taskRouter.delete("/tasks/:id", deleteTaskById);
 
 
+// Error-handling middleware for non-existent routes
+taskRouter.use((req, res, next) => {
+    const error = new Error('Route not found');
+    error.status = 404;
+    next(error);
+});
+
+// Custom error-handling middleware
+taskRouter.use((error, req, res, next) => {
+    res.status(error.status || 500).json({
+        error: {
+            message: error.message
+        }
+    });
+});
+
 
 module.exports = {
     taskRouter

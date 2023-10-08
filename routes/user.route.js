@@ -16,6 +16,22 @@ userRouter.post("/login", UserLogin);
 userRouter.get("/allusers", AllUsers);
 
 
+// Error-handling middleware for non-existent routes
+userRouter.use((req, res, next) => {
+    const error = new Error('Route not found');
+    error.status = 404;
+    next(error);
+});
+
+// Custom error-handling middleware
+userRouter.use((error, req, res, next) => {
+    res.status(error.status || 500).json({
+        error: {
+            message: error.message
+        }
+    });
+});
+
 
 module.exports = {
     userRouter
