@@ -61,7 +61,7 @@ To ensure fair usage and prevent abuse, this API implements rate limiting. You c
 ## Logging
 Logging is an integral part of this API, powered by Winston. Every interaction with the API is meticulously tracked and logged. This feature serves as a valuable tool for monitoring and troubleshooting purposes.
 
-## Entity Relation Diagram
+## Entity Relation Model
 
 ![image](https://github.com/mohammadsaud-0110/tacnique-Assignment/assets/112760057/a99d7977-33b7-4ae5-a40d-a3507575e384)
 
