@@ -63,5 +63,6 @@ Logging is an integral part of this API, powered by Winston. Every interaction w
 
 ## Entity Relation Diagram
 
+![image](https://github.com/mohammadsaud-0110/tacnique-Assignment/assets/112760057/a99d7977-33b7-4ae5-a40d-a3507575e384)
 
 
