@@ -7,7 +7,6 @@ Welcome to the Tacnique Task Management API! This API is built using Node.js and
 ## Table of Contents
 - [Getting Started](#getting-started)
 - [Installation](#installation)
-- [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Authentication](#authentication)
 - [Deployment](#deployment)
@@ -33,15 +32,15 @@ npm install
 npm run server
 ```
 
-## Usage
-Provide examples or instructions on how to use your API here.
+## Deployment
+The project is deployed on Render : https://tacnique-todo.onrender.com
 
 ## API Endpoints
 Explore the powerful API endpoints available in this project:
 
 | No. | API Endpoint          | Feature             | Description                                | req.body                                   |
 |---- |----------------------|---------------------|--------------------------------------------|-------------------------------------------|
-| 1   | POST /user/register   | User Registration   | Create a new user account.                  | `{ "name": "example",\n "email": "example@email.com", "password": "example123" }` |
+| 1   | POST /user/register   | User Registration   | Create a new user account.                  | `{ "name": "example", "email": "example@email.com", "password": "example123" }` |
 | 2   | POST /user/login      | User Login          | Log in with your credentials.               | `{ "email": "example@email.com", "password": "example123" }` |
 | 3   | GET /user/allusers    | All Users           | Retrieve all registered users.             | -                                         |
 | 4   | POST /user/logout     | User Logout         | Safely log out from your account.           | -                                         |
@@ -49,7 +48,7 @@ Explore the powerful API endpoints available in this project:
 | 6   | GET /tasks            | All Tasks           | Retrieve all tasks. (Rate limiting: 15 req every 2 minutes) | - |
 | 7   | GET /tasks/:id        | Task by ID          | Find a specific task using its unique ID.   | -                                         |
 | 8   | GET /tasks/user/:id   | Tasks by User ID    | Retrieve tasks associated with a specific user. | -                                     |
-| 9   | PUT /tasks/:id        | Update Task         | Modify the details of a task.               | `{ "title": "Updated Task Title" / "description": "Updated Task Description" / "status" : "completed" }` |
+| 9   | PUT /tasks/:id        | Update Task         | Modify the details of a task. Update any field of choice.| `{ "title": "Updated Task Title" / "description": "Updated Task Description" / "status" : "completed" }` |
 | 10  | DELETE /tasks/:id     | Delete Task         | Remove a task from your list.               | -                                         |
 | 11  | GET /logs             | All Logs            | Retrieve all logs related to API.           | -                                         |
 
