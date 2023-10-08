@@ -25,10 +25,10 @@ app.use(expressWinston.logger({
     statusLevels: true,
     transports: [
         // Console Transport for logging to console
-        new winston.transports.Console({
-            level: "info",
-            json: true
-        }),
+        // new winston.transports.Console({
+        //     level: "info",
+        //     json: true
+        // }),
         // File Transport for saving logs to a file
         new winston.transports.File({
             level: "info",
